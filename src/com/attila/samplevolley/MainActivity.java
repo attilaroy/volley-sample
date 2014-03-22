@@ -15,7 +15,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 public class MainActivity extends Activity implements OnClickListener {
-	Button imageLoader,jsonRequest,gsonParser,getRequest,postRequest;
+	Button imageLoader,jsonRequest,gsonParser,loadFromCache;
 	static ProgressDialog progressDialog;
 
 	@Override
@@ -27,8 +27,8 @@ public class MainActivity extends Activity implements OnClickListener {
 		imageLoader.setOnClickListener(this);
 		jsonRequest.setOnClickListener(this);
 		gsonParser.setOnClickListener(this);
-		getRequest.setOnClickListener(this);
-		postRequest.setOnClickListener(this);
+		loadFromCache.setOnClickListener(this);
+		
 		
 	}
 	
@@ -36,8 +36,7 @@ public class MainActivity extends Activity implements OnClickListener {
 	imageLoader = (Button) findViewById(R.id.button_image_loading);
 	jsonRequest = (Button) findViewById(R.id.button_json_request);
 	gsonParser = (Button) findViewById(R.id.button_gson);
-	getRequest = (Button) findViewById(R.id.button_get);
-	postRequest = (Button) findViewById(R.id.button_post);
+	loadFromCache = (Button) findViewById(R.id.button_cache);
    }
 
 @Override
@@ -56,17 +55,15 @@ public void onClick(View v) {
 		break;	
 		
 	case R.id.button_gson: 
-		
+		Intent gsonIntent = new Intent(MainActivity.this,MakeGsonRequest.class);
+		startActivity(gsonIntent);
 		break;
 		
-	case R.id.button_get: 
-		
+	case R.id.button_cache: 
+		Intent cacheIntent = new Intent(MainActivity.this,CacheHandler.class);
+		startActivity(cacheIntent);
 		break;
 		
-	case R.id.button_post: 
-		
-		break;
-
 	default:
 		break;
 	}

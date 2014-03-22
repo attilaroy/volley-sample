@@ -1,9 +1,14 @@
 package com.attila.samplevolley;
 
+import java.io.UnsupportedEncodingException;
+import java.util.HashMap;
+import java.util.Map;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONStringer;
 
+import com.android.volley.Cache.Entry;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
@@ -26,19 +31,20 @@ public class JsonRequest extends Activity{
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_json_request);
 		tvName = (TextView)findViewById(R.id.textview_name);
-		MainActivity.showProgressDialog(JsonRequest.this);
-		
+				
 		RequestQueue queue = VolleyHandler.getRequestQueue();
-        
+			
+			MainActivity.showProgressDialog(JsonRequest.this);
         JsonObjectRequest jsonRequest = new JsonObjectRequest(Method.GET, 
-                                                "http://echo.jsontest.com/key/value/name/arun",
+                                                Constants.JSON_URL,
                                                 null,
                                                 SuccessListener(),
                                                 ErrorListener());
 
         queue.add(jsonRequest);
-        
 	}
+	
+	
 	
 	private Response.Listener<JSONObject> SuccessListener() {
         return new Response.Listener<JSONObject>() {
@@ -64,5 +70,7 @@ public class JsonRequest extends Activity{
             }
         };
     }
+    
+    
 
 }

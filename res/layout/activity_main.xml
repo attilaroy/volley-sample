@@ -25,16 +25,10 @@
         android:text="Gson Parsing"
         />
     <Button 
-        android:id="@+id/button_get"
+        android:id="@+id/button_cache"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="GET Request"
-        />
-    <Button 
-        android:id="@+id/button_post"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:text="POST Request"
+        android:text="Cache Example"
         />
     
     </LinearLayout>

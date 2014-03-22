@@ -12,11 +12,12 @@ public class VolleyHandler {
 
 	public static RequestQueue mRequestQueue;
 	private static ImageLoader mImageLoader;
+	public static int cacheSize;
 	
 	public static void intializeRequestQueue(Context context) {
 		mRequestQueue = Volley.newRequestQueue(context);
 		 int maxMemory = (int) (Runtime.getRuntime().maxMemory() / 1024);
-         int cacheSize = maxMemory / 8;
+          cacheSize = maxMemory / 8;
          mImageLoader = new ImageLoader(mRequestQueue, new BitmapLruCache(cacheSize));
 	}
 	
