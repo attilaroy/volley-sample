@@ -15,7 +15,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 
 public class MainActivity extends Activity implements OnClickListener {
-	Button imageLoader,jsonRequest,gsonParser,loadFromCache;
+	Button imageLoader,jsonRequest,gsonParser,loadFromCache,stringRequest;
 	static ProgressDialog progressDialog;
 
 	@Override
@@ -28,12 +28,14 @@ public class MainActivity extends Activity implements OnClickListener {
 		jsonRequest.setOnClickListener(this);
 		gsonParser.setOnClickListener(this);
 		loadFromCache.setOnClickListener(this);
+		stringRequest.setOnClickListener(this);
 		
 		
 	}
 	
    public void intializeUI() {
 	imageLoader = (Button) findViewById(R.id.button_image_loading);
+	stringRequest = (Button) findViewById(R.id.button_string_request);
 	jsonRequest = (Button) findViewById(R.id.button_json_request);
 	gsonParser = (Button) findViewById(R.id.button_gson);
 	loadFromCache = (Button) findViewById(R.id.button_cache);
@@ -47,6 +49,11 @@ public void onClick(View v) {
 	case R.id.button_image_loading: 
 		Intent imageIntent = new Intent(MainActivity.this,ImageLoading.class);
 		startActivity(imageIntent);		
+		break;
+		
+	case R.id.button_string_request: 
+		Intent stringIntent = new Intent(MainActivity.this,SampleStringRequest.class);
+		startActivity(stringIntent);		
 		break;
 		
 	case R.id.button_json_request: 

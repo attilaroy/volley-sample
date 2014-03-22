@@ -12,11 +12,19 @@
         android:layout_height="wrap_content"
         android:text="Load Image"
         />
+    
+    <Button 
+        android:id="@+id/button_string_request"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:text="String Request Using PUT Method"
+        />
+      
     <Button 
         android:id="@+id/button_json_request"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:text="Make Json Request"
+        android:text="Json Request Using GET Method"
         />
     <Button 
         android:id="@+id/button_gson"

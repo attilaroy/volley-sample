@@ -45,6 +45,11 @@
             android:label="@string/app_name" >
         </activity>
         
+         <activity
+            android:name="com.attila.samplevolley.SampleStringRequest"
+            android:label="@string/app_name" >
+        </activity>
+        
     </application>
 
 </manifest>

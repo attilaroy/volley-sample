@@ -23,6 +23,7 @@ import android.widget.TextView;
 
 public class JsonRequest extends Activity{
 	TextView tvName;
+	RequestQueue queue;
 
 	
 	@Override
@@ -32,7 +33,7 @@ public class JsonRequest extends Activity{
 		setContentView(R.layout.activity_json_request);
 		tvName = (TextView)findViewById(R.id.textview_name);
 				
-		RequestQueue queue = VolleyHandler.getRequestQueue();
+		queue = VolleyHandler.getRequestQueue();
 			
 			MainActivity.showProgressDialog(JsonRequest.this);
         JsonObjectRequest jsonRequest = new JsonObjectRequest(Method.GET, 
@@ -41,6 +42,7 @@ public class JsonRequest extends Activity{
                                                 SuccessListener(),
                                                 ErrorListener());
 
+        jsonRequest.setTag("jsonrequestTag");
         queue.add(jsonRequest);
 	}
 	
@@ -71,6 +73,12 @@ public class JsonRequest extends Activity{
         };
     }
     
+    @Override
+    protected void onDestroy() {
+    	// TODO Auto-generated method stub
+    	super.onDestroy();
+    	queue.cancelAll("jsonrequestTag");
+    }
     
 
 }

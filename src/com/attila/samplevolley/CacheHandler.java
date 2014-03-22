@@ -65,7 +65,7 @@ public class CacheHandler extends Activity implements OnClickListener{
 		     // process data
 		}
 		else {
-			tvJsonCache.setText("Cache has no json value");
+			tvJsonCache.setText("Make Json Request first and click again Cache Example");
 		}
 		}
 		
