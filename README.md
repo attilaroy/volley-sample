@@ -4,10 +4,10 @@ Volley is a networking library from Google. It makes the networking of Android a
 
 What is the importance of Volley ?
 
-Efficient network management
-Easy to use request management 
-Transparent disk and memory caching
-Easy to customize
+Efficient network management,
+Easy to use request management,
+Transparent disk and memory caching,
+Easy to customize,
 Debugging and Tracing tools
 
 How to use Volley in your projects ?
